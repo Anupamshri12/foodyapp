@@ -8,7 +8,7 @@ export default function MyOrder() {
   console.log(localStorage.getItem("userEmail"));
 
   const fetchdata = async () => {
-    const response = await fetch("http://localhost:5000/api/myorderdata", {
+    const response = await fetch("https://backendonly-2.onrender.com/api/myorderdata", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
