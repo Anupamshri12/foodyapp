@@ -1,0 +1,17 @@
+#special{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+}
+#special > .image-box > img:hover{
+    transition: 0.3s ease-in-out;
+   transform: scale(1.7);
+}
+.image-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
