@@ -5,7 +5,7 @@ export default function SignUp() {
     const handleme = async(e)=>{
            e.preventDefault();
           //  console.log(JSON.stringify({name:credentials.name ,email:credentials.email ,password:credentials.password ,location:credentials.location}))
-           const response = await fetch("https://backendonly-2.onrender.com/api/createuser" ,{
+           const response = await fetch("https://backendonly-4.onrender.com/api/createuser" ,{
             method:"POST",
             headers:{
                 'Content-Type':"application/json"

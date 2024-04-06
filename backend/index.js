@@ -14,7 +14,7 @@ app.use((req ,res ,next)=>{
    next()
 })
 const corsOptions = {
-   origin: 'https://main--dulcet-travesseiro-ca849b.netlify.app',
+   origin: 'https://dulcet-travesseiro-ca849b.netlify.app',
  };
  app.use(cors(corsOptions));
 app.use("/api",require("./Routes/CreateUser"))
