@@ -1,22 +1,14 @@
 const express = require("express")
 const app = express()
-const cors = require("cors")
+const cors = require("cors");
 const mongodb = require("./db");
+const cookieparser = require("cookie-parser")
 mongodb();
 app.use(express.json());
+app.use(cors());
 
-app.use((req ,res ,next)=>{
-   res.setHeader("Access-Control-Allow-Origin" ,"http://localhost:3000")
-   res.header(
-    "Access-Control-Allow-Headers",
-    "Origin ,X-Requested-With ,Content-Type ,Accept"
-   )
-   next()
-})
-const corsOptions = {
-   origin: 'https://dulcet-travesseiro-ca849b.netlify.app',
- };
- app.use(cors(corsOptions));
+
+ 
 app.use("/api",require("./Routes/CreateUser"))
 app.use("/api" ,require("./Routes/Displaydata"))
 app.use("/api" ,require("./Routes/OrderData"))

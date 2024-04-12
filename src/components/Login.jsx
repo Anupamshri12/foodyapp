@@ -8,7 +8,7 @@ export default function Login() {
     const handleme = async(e)=>{
            e.preventDefault();
           //  console.log(JSON.stringify({name:credentials.name ,email:credentials.email ,password:credentials.password ,location:credentials.location}))
-           const response = await fetch("https://backendonly-4.onrender.com/api/loginuser" ,{
+           const response = await fetch("https://backendonly.onrender.com/api/loginuser" ,{
             method:"POST",
             headers:{
                 'Content-Type':"application/json"
