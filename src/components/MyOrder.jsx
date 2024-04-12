@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { useState } from "react";
+import './Myorder.css'
 export default function MyOrder() {
   const [orderData, setorderdata] = useState([]);
   console.log(localStorage.getItem("userEmail"));
@@ -44,7 +45,7 @@ export default function MyOrder() {
                   {data &&
                     data.map((item, idx) => {
                       return (
-                        <div key={idx} className="card" style = {{width:"30rem"}}>
+                        <div key={idx} className="card" id = "title-card">
                           {item.Order_date ? (
                             <div className="card-body">
                               <h5 className="card-title">Order Date</h5>

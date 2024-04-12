@@ -1,0 +1,8 @@
+#title-card{
+    width: 30rem;
+}
+@media screen and (max-width:500px) {
+    #title-card{
+        width: 20rem;
+    }
+}
