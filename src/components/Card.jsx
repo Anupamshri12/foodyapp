@@ -4,6 +4,8 @@ import { addtocart } from '../feautres/Slice';
 import { useState } from 'react';
 import { useRef } from 'react';
 import './Card.css'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 export default function Card(props) {
   let options = props.options;
   let priceoptions = Object.keys(options);
@@ -14,7 +16,26 @@ export default function Card(props) {
   const[sizet ,setsize] = useState(priceoptions[0]);
  
  const handlecart = async ()=>{
-  await dispatch(addtocart({price:finalPrice,id:props.foodname.id,img:props.foodname.img ,sizet:sizet,name:props.foodname.name ,qty:qty ,description:props.foodname.description}))
+  const tokenid = localStorage.getItem("authToken");
+  if(tokenid !== null){
+    await dispatch(addtocart({price:finalPrice,id:props.foodname.id,img:props.foodname.img ,sizet:sizet,name:props.foodname.name ,qty:qty ,description:props.foodname.description}))
+    toast.success('ITEM ADDED TO CART ', {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+      
+      });
+      
+    
+  }
+  else{
+    alert("Please Login to proceed")
+  }
   
  }
    const finalPrice = qty*parseInt(options[sizet]);
@@ -51,6 +72,18 @@ useEffect(()=>{
         <hr>
         </hr>
         <button className="btn btn-success justify-center ms-2" onClick = {handlecart}>Add to Cart</button>
+        <ToastContainer
+position="bottom-right"
+autoClose={5000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="dark"
+/>
       </div>
     </div>
   </div>

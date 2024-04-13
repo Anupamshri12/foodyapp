@@ -31,6 +31,7 @@ export default function Cart(){
     console.log(food)
        await dispatch(dropy())
     }
+    alert("Checkout Successfully !!")
     
   }
   let totalPrice = food.reduce((total, food1) => total + food1.price, 0)
